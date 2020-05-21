@@ -99,7 +99,7 @@ h2 {
     padding: 10px 15px;
     font-size: 1.5rem;
     border-radius: 8px;
-    cursor: none;
+    cursor: not-allowed;
     letter-spacing: 2px;
 }
 

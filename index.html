@@ -10,27 +10,73 @@
     <div class="conteudo">
         <section class="esquerda">
             <article class="inimigo">
-                <img src="./src/svg/Balão-nulo.svg" alt="">
-                <img src="./src/svg/Enemy.svg" alt="" width="150px">    
+                <img id="escolhaInimigo" src="./assets/svg/Balão-nulo.svg" alt="">
+                <img src="./assets/svg/Enemy.svg" alt="" width="150px">    
                 <h2>Inimigo</h2>
             </article>
         </section>
             
         <section class="direita">
             <article class="opcoes">
-                <img src="./src/svg/Pedra.svg" alt="">
-                <img src="./src/svg/Papel.svg" alt="">
-                <img src="./src/svg/Tesoura.svg" alt="">
+                <a><img id="opc1" src="./assets/svg/Pedra.svg" alt="Pedra" onclick="selecionar(1)"></a>
+                <a><img id="opc2" src="./assets/svg/Papel.svg" alt="Papel" onclick="selecionar(2)"></a>
+                <a><img id="opc3" src="./assets/svg/Tesoura.svg" alt="Tesoura" onclick="selecionar(3)"></a>
             </article>
 
             <article class="escolha">
                 <p>Sua escolha:</p>
-                <button type="button">Confirmar</button>
+                <button id="confirmar" type="button" onclick="jogar()">Confirmar</button>
             </article>
 
-            <h2 class="rodada">Rodada X</h2>
+            <h2 class="rodada">Rodada </h2>
             
         </section>
     </div>
+
+    <script>
+
+        var escolhaJogador = 0;
+        var jogadas = 0;
+
+        function selecionar(escolha) {
+
+            document.getElementById('opc1').style.opacity = 0.5;
+            document.getElementById('opc2').style.opacity = 0.5;
+            document.getElementById('opc3').style.opacity = 0.5;
+
+            escolhaJogador = escolha;
+
+            document.getElementById('opc' + String(escolhaJogador)).style.opacity = 1;
+            document.getElementById('confirmar').style.cursor = "pointer"; 
+            document.getElementById('confirmar').style.background = "#419A5C"; 
+        }
+
+        function jogar() {
+
+            jogadas++;
+
+            escolhaComputador = Math.floor((Math.random() * (3 - 1 + 1)) + 1);
+
+            document.getElementById('escolhaInimigo').src = './assets/svg/' + String(escolhaComputador) + '-inimigo.svg';
+            
+            alert(resultado())
+        }
+
+        function resultado() {
+            if (escolhaJogador == escolhaComputador) {
+                return("empate");
+            } else {
+                if (((escolhaJogador - 1) == escolhaComputador) && (escolhaJogador != 1)){
+                    return("Ganhou!");
+                } else {
+                    if (((escolhaJogador + 2) == escolhaComputador) && (escolhaJogador == 1)) {
+                        return("Ganhou!");
+                    } else {
+                        return("Perdeu!");
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
