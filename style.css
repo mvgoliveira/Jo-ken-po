@@ -48,7 +48,8 @@ h2 {
 }
 
 .direita {
-    width: 60%;
+    overflow: hidden;
+    width: 100%;
     min-height: 100%;
     padding-top: 50px;
 
