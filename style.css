@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+    font-family: Bebas neue;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.esquerda {
+    background: #333;
+    width: 40%;
+    min-height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.esquerda .inimigo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.esquerda .inimigo h2 {
+    margin-top: 10px;
+}
+
+.esquerda .inimigo img:nth-child(1) {
+    margin-bottom: 20px;
+
+}
+
+.direita {
+    width: 60%;
+    min-height: 100%;
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.direita .opcoes {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.direita .opcoes img {
+    margin: 0 20px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.direita .opcoes img:hover {
+    opacity: 1;
+}
+
+.direita .escolha {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 40px;
+
+    font-size: 2rem;
+    color: #09A1DA;
+}
+
+.direita .escolha p {
+    margin-bottom: 10px;
+}
+
+.direita .escolha button {
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: none;
+    letter-spacing: 2px;
+}
+
+.direita .rodada {
+    color: #333;
+    margin-top: 80px;
+    font-weight: 100;
+}
+
+
+
