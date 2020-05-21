@@ -50,7 +50,7 @@ h2 {
 .direita {
     overflow: hidden;
     width: 100%;
-    min-height: 100%;
+
     padding-top: 50px;
 
     display: flex;
