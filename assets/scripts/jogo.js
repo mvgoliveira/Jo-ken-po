@@ -73,6 +73,7 @@ function resultado(valor) {
             document.getElementById('popupimg').style.display = "grid";
             document.getElementById('popupimg').src = './assets/img/win.jpg';
             document.getElementById('popupexit').dataset.content = 'x';
+            document.getElementById('popupmsg').style.color = "#fff";
             document.getElementById('popupmsg').textContent = ("Ganhou!")
             break;
 
@@ -80,6 +81,7 @@ function resultado(valor) {
             document.getElementById('popupimg').style.display = "grid";
             document.getElementById('popupimg').src = "./assets/img/defeat.jpg";
             document.getElementById('popupexit').dataset.content = 'x';
+            document.getElementById('popupmsg').style.color = "#fff";
             document.getElementById('popupmsg').textContent = ("Perdeu!")
             break;
 
