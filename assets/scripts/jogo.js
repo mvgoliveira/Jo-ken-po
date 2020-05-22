@@ -6,8 +6,6 @@ var InimigoPonto = 0;
 
 var opc = ["Pedra", "Papel", "Tesoura"];
 
-document.getElementById('confirmar').disabled = true;
-
 function selecionar(escolha) {
 
     document.getElementById('opc1').style.opacity = 0.5;
