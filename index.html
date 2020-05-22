@@ -36,7 +36,7 @@
 
         <section id="popup">
             <img id="popupimg" src="" width="400px">
-            <p id="popupexit"></p>
+            <a><p id="popupexit" onclick="apagar()"></p></a>
             <p id="popupmsg"></p>
         </section>
     </div>
@@ -105,23 +105,22 @@
 
         function resultado(valor) {
             if (valor == 1) {
-                
                 document.getElementById('popupimg').style.display = "grid";
                 document.getElementById('popupimg').src = './assets/img/win.jpg';
-                document.getElementById('popupimg').dataset.content = 'x';
+                document.getElementById('popupexit').dataset.content = 'x';
                 document.getElementById('popupmsg').textContent = ("Ganhou!")
             } else {
                 document.getElementById('popupimg').style.display = "grid";
                 document.getElementById('popupimg').src = "./assets/img/defeat.jpg";
-                document.getElementById('popupimg').dataset.content = 'x';
+                document.getElementById('popupexit').dataset.content = 'x';
                 document.getElementById('popupmsg').textContent = ("Perdeu!")
             }
-
-            setTimeout(apagar, 2000);
         }
 
         function apagar() {
             document.getElementById('popupimg').style.display = "none";
+            document.getElementById('popupexit').dataset.content = '';
+            document.getElementById('popupmsg').textContent = '';
         }
 
     </script>
