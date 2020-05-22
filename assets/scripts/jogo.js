@@ -4,7 +4,7 @@ var jogadas = 1;
 var playerPonto = 0;
 var InimigoPonto = 0;
 
-var opc = ["Pedra", "Papel", "Tesoura"];
+var opc = ["Pedra", "Papel", "Tesoura", ""];
 
 function selecionar(escolha) {
 
@@ -50,6 +50,14 @@ function jogar() {
             }
         }
     }
+
+    document.getElementById('opc1').style.opacity = 0.5;
+    document.getElementById('opc2').style.opacity = 0.5;
+    document.getElementById('opc3').style.opacity = 0.5;
+    document.getElementById('confirmar').disabled = true;
+    document.getElementById('confirmar').style.cursor = "not-allowed"; 
+    document.getElementById('confirmar').style.background = "#333"; 
+    document.getElementById('escolha').textContent = ("SUA ESCOLHA:")
 
     document.getElementById('playerPonto').textContent = ("Pontos: " + String(playerPonto));
     document.getElementById('inimigoPonto').textContent = ("Pontos: " + String(InimigoPonto));
