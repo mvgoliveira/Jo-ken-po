@@ -13,6 +13,7 @@
                 <img id="escolhaInimigo" src="./assets/svg/Balão-nulo.svg" alt="">
                 <img src="./assets/svg/Enemy.svg" alt="" width="150px">    
                 <h2>Inimigo</h2>
+                <h3 id="inimigoPonto">pontos: 0</h3>
             </article>
         </section>
             
@@ -24,19 +25,33 @@
             </article>
 
             <article class="escolha">
-                <p>Sua escolha:</p>
+                <p id="escolha">Sua escolha:</p>
                 <button id="confirmar" type="button" onclick="jogar()">Confirmar</button>
             </article>
 
-            <h2 class="rodada">Rodada 1</h2>
+            <h2 id="rodada">Rodada 0</h2>
+            <h3 id="playerPonto">Pontos: 0</h3>
             
+        </section>
+
+        <section id="popup">
+            <img id="popupimg" src="" width="400px">
+            <p id="popupexit"></p>
+            <p id="popupmsg"></p>
         </section>
     </div>
 
     <script>
 
         var escolhaJogador = 0;
-        var jogadas = 0;
+        var jogadas = 1;
+
+        var playerPonto = 0;
+        var InimigoPonto = 0;
+
+        var opc = ["Pedra", "Papel", "Tesoura"];
+
+        document.getElementById('confirmar').disabled = true;
 
         function selecionar(escolha) {
 
@@ -47,8 +62,13 @@
             escolhaJogador = escolha;
 
             document.getElementById('opc' + String(escolhaJogador)).style.opacity = 1;
+
             document.getElementById('confirmar').style.cursor = "pointer"; 
             document.getElementById('confirmar').style.background = "#419A5C"; 
+            document.getElementById('confirmar').disabled = false;
+
+            document.getElementById('escolha').textContent = ("SUA ESCOLHA: " + String(opc[escolha-1]))
+        
         }
 
         function jogar() {
@@ -58,25 +78,52 @@
             escolhaComputador = Math.floor((Math.random() * (3 - 1 + 1)) + 1);
 
             document.getElementById('escolhaInimigo').src = './assets/svg/' + String(escolhaComputador) + '-inimigo.svg';
-            
-            alert(resultado())
-        }
 
-        function resultado() {
+            document.getElementById('rodada').textContent = ("rodada " + String(jogadas));
+
             if (escolhaJogador == escolhaComputador) {
-                return("empate");
+                
             } else {
                 if (((escolhaJogador - 1) == escolhaComputador) && (escolhaJogador != 1)){
-                    return("Ganhou!");
+                    playerPonto++;
+                    resultado(1);
                 } else {
                     if (((escolhaJogador + 2) == escolhaComputador) && (escolhaJogador == 1)) {
-                        return("Ganhou!");
+                        playerPonto++;
+                        resultado(1);
                     } else {
-                        return("Perdeu!");
+                        InimigoPonto++;
+                        resultado(0);
                     }
                 }
             }
+
+            document.getElementById('playerPonto').textContent = ("Pontos: " + String(playerPonto));
+            document.getElementById('inimigoPonto').textContent = ("Pontos: " + String(InimigoPonto));
+
         }
+
+        function resultado(valor) {
+            if (valor == 1) {
+                
+                document.getElementById('popupimg').style.display = "grid";
+                document.getElementById('popupimg').src = './assets/img/win.jpg';
+                document.getElementById('popupimg').dataset.content = 'x';
+                document.getElementById('popupmsg').textContent = ("Ganhou!")
+            } else {
+                document.getElementById('popupimg').style.display = "grid";
+                document.getElementById('popupimg').src = "./assets/img/defeat.jpg";
+                document.getElementById('popupimg').dataset.content = 'x';
+                document.getElementById('popupmsg').textContent = ("Perdeu!")
+            }
+
+            setTimeout(apagar, 2000);
+        }
+
+        function apagar() {
+            document.getElementById('popupimg').style.display = "none";
+        }
+
     </script>
 </body>
 </html>
