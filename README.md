@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/assets/img/JoKenPo.png"  width="228" height="75">
+  <img src="/assets/img/JoKenPo.png"  width="228" height="73">
 </p>
 
 # JoKenPo
