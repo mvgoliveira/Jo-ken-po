@@ -23,4 +23,18 @@
     .esquerda img {
         width: 100px;
     }
+
+    #popup {
+        top: 30%;
+        left: 50%;
+        color: #fff;
+    }
+
+    #popup #popupexit {
+        left: 80%;
+    }
+
+    #popupimg {
+        width: 200px;
+    }
 }
