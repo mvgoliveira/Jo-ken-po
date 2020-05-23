@@ -24,9 +24,11 @@ h3 {
 }
 
 .esquerda {
-    background: #333;
+    background: #222;
     width: 40%;
     min-height: 100%;
+
+    padding: 0 50px;
 
     display: flex;
     align-items: center;
@@ -53,7 +55,7 @@ h3 {
 }
 
 .direita {
-    color: #333;
+    color: #222;
     overflow: hidden;
     width: 100%;
 
@@ -101,7 +103,7 @@ h3 {
 }
 
 .direita .escolha button {
-    background: #333;
+    background: #222;
     color: #fff;
     padding: 10px 15px;
     font-size: 1.5rem;
@@ -135,14 +137,14 @@ h3 {
     text-align: center;
     margin: auto;
     font-size: 4rem;
-    background: #333;
+    background: #222;
     width: 100%;
 }
 
 #popup #popupexit {
     font-family: roboto;
     font-size: 2rem;
-    background: #333;
+    background: #222;
     width: 40px;
     position: absolute;
     left: 90%;

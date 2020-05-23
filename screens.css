@@ -1,0 +1,26 @@
+@media (max-width: 700px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .direita .opcoes img{
+        width: 60px;
+        margin: 5px;
+    }
+
+    .direita #rodada {
+        margin-top: 35px;
+    }
+
+    .escolha p {
+        font-size: 1.5rem;
+    }
+
+    .esquerda img {
+        width: 100px;
+    }
+}
